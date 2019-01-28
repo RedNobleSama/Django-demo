@@ -1,0 +1,46 @@
+{% extends 'myweb/base.html' %}
+{% load static from static %}
+{% block mainbody %}
+			<div class="account_grid">
+			   <div class=" login-right">
+			  	<h3>注册</h3>
+				<form method="post" action="{% url 'web_insertuser' %}">
+                    {% csrf_token %}
+                    <div>
+					<span>用户名<label>*</label></span>
+					<input type="text" name="username">
+				  </div>
+                    <div>
+					<span>真实姓名<label>*</label></span>
+					<input type="text" name="name">
+				  </div>
+				  <div>
+					<span>邮箱<label>*</label></span>
+					<input type="text" name="email">
+				  </div>
+                    <div>
+					<span>手机号<label>*</label></span>
+					<input type="text" name="tel">
+				  </div>
+                    <div>
+					<span>地址<label>*</label></span>
+					<input type="text" name="address">
+				  </div>
+                    <div>
+					<span>性别<label>*</label></span>
+                    <input type="radio" name="sex" class="input-xlarge" id="input01" value="1" />男
+                    <input type="radio" name="sex" class="input-xlarge" id="input01" value="0" />女
+                    </div>
+				  <div>
+					<span>密码<label>*</label></span>
+					<input type="password" name="password">
+				  </div>
+                    <div>
+					<span>重复密码<label>*</label></span>
+					<input type="password" name="password1">
+				  </div>
+				  <input type="submit" value="确定">
+			    </form>
+			   </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+				<div class="span9">
+					<h2>
+						商品列表
+					</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>
+									id
+								</th>
+                                <th>
+									商品类别ID
+								</th>
+								<th>
+									商品类别
+								</th>
+                                <th>
+									商品名称
+								</th>
+                                <th>
+									出版社
+								</th>
+                                <th>
+									作者
+								</th>
+                                <th>
+									定价
+								</th>
+                                <th>
+									操作
+								</th>
+							</tr>
+						</thead>
+                        {% for i in goodlist %}
+						<tbody>
+							<tr>
+								<td>
+                                    {{ i.id}}
+								</td>
+                                <td>
+                                    {{ i.types_id}}
+								</td>
+								<td>
+                                    {{ i.types_name}}
+								</td>
+                                <td>
+                                    {{ i.book}}
+								</td>
+                                <td>
+                                    {{ i.company}}
+								</td>
+                                <td>
+                                    {{ i.author}}
+								</td>
+                                <td>
+                                    {{ i.price}}￥
+								</td>
+                                <th>
+									<a href="{% url 'myadmin_updategood' i.id %}" class="view-link">修改信息</a>
+                                    <a href="{% url 'myadmin_deletegood' i.id %}" class="view-link">删除</a>
+								</th>
+							</tr>
+						</tbody>
+                        {% endfor %}
+					</table>
+				</div>
+{% endblock %}

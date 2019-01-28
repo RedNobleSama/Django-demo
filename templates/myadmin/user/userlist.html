@@ -1,0 +1,57 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+				<div class="span9">
+					<h2>
+						用户列表
+					</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>
+									id
+								</th>
+								<th>
+									用户名
+								</th>
+								<th>
+									姓名
+								</th>
+								<th>
+									权限
+								</th>
+								<th>
+									状态
+								</th>
+                                <th>
+									操作
+								</th>
+							</tr>
+						</thead>
+                        {% for i in userlist %}
+						<tbody>
+							<tr>
+								<td>
+                                    {{ i.id}}
+								</td>
+								<td>
+                                    {{ i.username}}
+								</td>
+								<td>
+                                    {{ i.name}}
+								</td>
+								<td>
+                                    {% if i.permissio == 1 %}普通用户{% else %}管理员{% endif %}
+								</td>
+								<td>
+                                    {% if i.state == 1 %}正常{% else %}封禁{% endif %}
+								</td>
+                                <th>
+									<a href="{% url 'myadmin_updateuser' i.id %}" class="view-link">修改信息</a>
+                                    <a href="{% url 'myadmin_deleteuser' i.id %}" class="view-link">删除</a>
+								</th>
+							</tr>
+						</tbody>
+                        {% endfor %}
+					</table>
+				</div>
+{% endblock %}

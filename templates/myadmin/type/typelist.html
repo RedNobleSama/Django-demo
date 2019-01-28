@@ -1,0 +1,39 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+				<div class="span9">
+					<h2>
+						用户列表
+					</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>
+									id
+								</th>
+								<th>
+									商品类别
+								</th>
+                                <th>
+									操作
+								</th>
+							</tr>
+						</thead>
+                        {% for i in typelist %}
+						<tbody>
+							<tr>
+								<td>
+                                    {{ i.id}}
+								</td>
+								<td>
+                                    {{ i.goods_type}}
+								</td>
+                                <th>
+									<a href="{% url 'myadmin_updatetype' i.id %}" class="view-link">修改信息</a>
+                                    <a href="{% url 'myadmin_deletetype' i.id %}" class="view-link">删除</a>
+								</th>
+							</tr>
+						</tbody>
+                        {% endfor %}
+					</table>
+				</div>
+{% endblock %}

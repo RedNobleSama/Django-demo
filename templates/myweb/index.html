@@ -1,0 +1,81 @@
+{% extends 'myweb/base.html' %}
+{% load static from static %}
+{% block mainbody %}
+			<div class="shoes-grid">
+				<div class="wmuSlider example1 slide-grid">
+				   <div class="wmuSliderWrapper">
+					   <article style="position: absolute; width: 100%; opacity: 0;">
+					   	<div class="banner-matter">
+							<img class="img-responsive banner-bag" src="{% static 'myweb/images/bag.jpg' %}" alt=" " />
+							<div class="banner-off">
+								<h2>FLAT 50% 0FF</h2>
+								<span>FOR ALL PURCHASE <b>VALUE</b></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+								<a class="now-get" href="#">GET NOW</a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					 	</article>
+					 	<article style="position: absolute; width: 100%; opacity: 0;">
+						<div class="banner-matter">
+							<img class="img-responsive banner-bag" src="{% static 'myweb/images/bag1.jpg' %}" alt=" " />
+							<div class="banner-off">
+								<h2>FLAT 50% 0FF</h2>
+								<span>FOR ALL PURCHASE <b>VALUE</b></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+								<a class="now-get" href="#">GET NOW</a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					 	</article>
+					 	<article style="position: absolute; width: 100%; opacity: 0;">
+						<div class="banner-matter">
+							<img class="img-responsive banner-bag" src="{% static 'myweb/images/bag.jpg' %}" alt=" " />
+							<div class="banner-off">
+								<h2>FLAT 50% 0FF</h2>
+								<span>FOR ALL PURCHASE <b>VALUE</b></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </p>
+								<a class="now-get" href="#">GET NOW</a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					 	</article>
+					 </div>
+	                <ul class="wmuSliderPagination">
+	                	<li><a href="#" class="">0</a></li>
+	                	<li><a href="#" class="">1</a></li>
+	                	<li><a href="#" class="">2</a></li>
+	                </ul>
+	            </div>
+
+	            <script src="{% static 'myweb/js/jquery.wmuSlider.js' %}"></script>
+				  <script>
+	       			$('.example1').wmuSlider();
+	   		     </script>
+	   		      <!---->
+	   		     <div class="shoes-grid-left">
+	   		     	<div class=" con-sed-grid">
+	   		     		<div class="elit-grid">
+		   		     		<h4>consectetur  elit</h4>
+		   		     		<span>FOR ALL PURCHASE VALUE</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+							<a class="now-get" href="#">GET NOW</a>
+						</div>
+						<a href="single.html"><img class="img-responsive shoe-left" src="{% static 'myweb/images/sh.jpg' %}" alt=" " /></a>
+						<div class="clearfix"> </div>
+	   		     	</div>
+	   		     	<div class="con-sed-grid sed-left-top">
+	   		     		<div class="elit-grid">
+		   		     		<h4>consectetur  elit</h4>
+		   		     		<span>FOR ALL PURCHASE VALUE</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
+							<a class="now-get" href="#">GET NOW</a>
+						</div>
+						<a href="single.html"><img class="img-responsive shoe-left" src="{% static 'myweb/images/wa.jpg' %}" alt=" " /></a>
+						<div class="clearfix"> </div>
+	   		     	</div>
+	   		     </div>
+
+	   		     <div class="clearfix"> </div>
+	   		   </div>
+{% endblock %}

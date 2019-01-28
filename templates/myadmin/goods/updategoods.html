@@ -1,0 +1,77 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+				<div class="span9">
+					<h1>
+						添加商品
+					</h1>
+					<form id="edit-profile" class="form-horizontal" action="{% url 'myadmin_editgood' goodlist.id %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+						<fieldset>
+							<legend>Your Profile</legend>
+							<div class="control-group">
+                            <label class="control-label" for="input01">商品类别：</label>
+                                <div class="controls">
+                                    <select name="types_name">
+                                        {% for vo in typelist %}
+                                            <option value="{{ vo.id }}-{{ vo.goods_type }}">
+                                                 {{ vo.id }}-{{ vo.goods_type }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">商品类别ID：</label>
+                                <div class="controls">
+                                    <input type="text" name="types_id" class="input-xlarge" id="input01" value="{{ goodlist.types_id }}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">商品名称：</label>
+                                <div class="controls">
+                                    <input type="text" name="book" class="input-xlarge" id="input01" value="{{ goodlist.book }}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">出版社：</label>
+                                <div class="controls">
+                                    <input type="text" name="company" class="input-xlarge" id="input01" value="{{ goodlist.company }}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">作者：</label>
+                                <div class="controls">
+                                    <input type="text" name="author" class="input-xlarge" id="input01" value="{{ goodlist.author }}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">商品图片：</label>
+                                <div class="controls">
+                                    <input type="file" name="picture" class="input-xlarge" id="input01" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">单价：</label>
+                                <div class="controls">
+                                    <input type="text" name="price" class="input-xlarge" id="input01" value="{{ goodlist.price}}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">介绍：</label>
+                                <div class="controls">
+                                    <textarea rows="3" cols="20" name="present">{{ goodlist.present }}</textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">简介：</label>
+                                <div class="controls">
+                                    <textarea rows="3" cols="20" name="content">{{ goodlist.content }}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">添加</button>
+                            </div>
+						</fieldset>
+					</form>
+				</div>
+{% endblock %}

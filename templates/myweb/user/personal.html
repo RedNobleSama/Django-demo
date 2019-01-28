@@ -1,0 +1,76 @@
+{% extends 'myweb/base.html' %}
+{% load static from static %}
+{% block mainbody %}
+			<div class="account_grid">
+                <table class="table table-bordered table-striped">
+                    <h3>个人信息</h3>
+						<thead>
+							<tr>
+								<th>
+									用户名
+								</th>
+								<th>
+									姓名
+								</th>
+                                <th>
+									性别
+								</th>
+                                <th>
+									邮箱
+								</th>
+                                <th>
+									地址
+								</th>
+                                <th>
+									操作
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+                                    {{ userlist.username}}
+								</td>
+								<td>
+                                    {{ userlist.name}}
+								</td>
+                                <td>
+                                    {% if userlist.sex == 1 %}
+                                        男
+                                     {% else %}
+                                        女
+                                    {% endif %}
+								</td>
+                                <td>
+                                    {{ userlist.email}}
+								</td>
+                                <td>
+                                    {{ userlist.address}}
+								</td>
+                                <th>
+									<a href="#" class="view-link">修改信息</a>
+                                    <a href="{% url 'web_updatepassword' %}" class="view-link">修改密码</a>
+								</th>
+							</tr>
+						</tbody>
+                </table>
+
+			   <div style="width: 680px;padding:10px;display: inline-block; float: left;margin-top: 20px;background-color: #fff;">
+									<div style="border-bottom: 1px #ccc solid;">
+										<p style="font-size: 20px;text-align: left;">我的订单</p>
+									</div>
+									<div style="padding: 20px 20px;border-bottom: 1px #F5F5F5 solid;height: 150px;">
+										<div style="float: left;margin-top: 10px;">
+											<img src="{% static 'pics/index/1547396748.3335626.png' %}" />
+										</div>
+										<div style="float: left;margin-top: 20px;">
+											<p><strong>黄仁宇作品系列：万历十五年　【荐书联盟推荐】</strong></p>
+											<p>出版社：<strong>人民出版社</strong> 金额：<strong>金额：18￥</strong></p>
+										</div>
+										<div style="float: right;margin-right: 20px;margin-top: 50px;">
+											<label style="border: 1px #ccc solid;padding: 5px;background-color: #fff;">已付款</label>
+										</div>
+                                    </div>
+               </div>
+            </div>
+{% endblock %}

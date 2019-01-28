@@ -1,0 +1,30 @@
+{% extends 'myweb/base.html' %}
+{% load static from static %}
+{% block mainbody %}
+        <div class="women-product">
+            <div class="grid-product">
+                {% for i in goodlist %}
+              <div class="  product-grid">
+                <div class="content_box"><a href="{% url 'web_good_details' i.id %}">
+                    <div class="left-grid-view grid-view-left">
+                         <img src="../../../static/pics/original/{{ i.picture }}" class="img-responsive watch-right" alt=""/>
+                            <div class="mask">
+                                <div class="info">Quick View</div>
+                            </div>
+                    </div>
+                    <div align="center">
+
+                    <h4><a href="{% url 'web_good_details' i.id %}">{{ i.book }}</a></h4>
+                         <h4><strong>{{ i.author}}</strong></h4>
+                         {{ i.price }}
+                    </div>
+                          </a>
+
+                    </div>
+
+                    </div>
+                {% endfor %}
+                  </div>
+                <div class="clearfix"> </div>
+		</div>
+{% endblock %}

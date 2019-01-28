@@ -1,0 +1,37 @@
+{% extends 'myweb/base.html' %}
+{% load static from static %}
+{% block mainbody %}
+			<div class="account_grid">
+			   <div class=" login-right">
+			  	<h3>确认收货地址</h3>
+				<form method="post" action="{% url 'web_insertcart' goodlist.id %}">
+                    {% csrf_token %}
+                    <div>
+					<span>商品名称<label>*</label></span>
+					<input type="text" name="username" value="{{ goodlist.book }}"  disabled="disabled">
+				  </div>
+                    <div>
+					<span>总金额<label>*</label></span>
+					<input type="text" name="price" value="{{ goodlist.price }}"  disabled="disabled">
+				  </div>
+                    <div>
+					<span>联系人<label>*</label></span>
+					<input type="text" name="linkman"  value="{{ userlist.name }}" >
+				  </div>
+				  <div>
+					<span>邮箱<label>*</label></span>
+					<input type="text" name="email" value="{{ userlist.email }}" >
+				  </div>
+                    <div>
+					<span>手机号<label>*</label></span>
+					<input type="text" name="tel" value="{{ userlist.tel }}" >
+				  </div>
+                    <div>
+					<span>地址<label>*</label></span>
+					<input type="text" name="address" value="{{ userlist.address }}" >
+				  </div>
+				  <input type="submit" value="确定地址">
+			    </form>
+			   </div>
+            </div>
+{% endblock %}
